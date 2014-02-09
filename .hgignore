@@ -6,3 +6,8 @@ coverage.xml
 .coverage
 
 *.pyc
+*.egg-info/
+build/
+dist/
+
+docs/_build/
