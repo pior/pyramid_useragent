@@ -1,4 +1,12 @@
-0.1
----
+Changes
+-------
 
+0.2
+```
+- Continuous testing
+- Documentation
+
+
+0.1
+```
 - Initial release.

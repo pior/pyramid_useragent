@@ -13,7 +13,8 @@ Provides an HTTP User-Agent parser for the
 * Bitbucket: https://bitbucket.org/pior/pyramid_useragent
 * |droneio|
 
-.. |droneio| image:: https://drone.io/bitbucket.org/pior/pyramid_useragent/status.png
+.. |droneio| image::
+   https://drone.io/bitbucket.org/pior/pyramid_useragent/status.png
    :target: https://drone.io/bitbucket.org/pior/pyramid_useragent
    :alt: Tests on drone.io
 
@@ -43,7 +44,7 @@ Usage
 
 .. code-block:: python
 
-    def parsed(request):
+    def hello(request):
         ua = request.user_agent_parsed  # I'am reified!
 
         name_of_first_component = ua.maincomponent.name
@@ -58,13 +59,17 @@ Usage
             return ua.components.values()
 
 
-Tests and Docs
---------------
+Tests
+-----
 
 .. code-block:: python
 
    pip install -e .[testing]
    nosetests
+
+
+Documentation
+-------------
 
 .. code-block:: python
 
