@@ -25,7 +25,10 @@ except:
     README = ''
     CHANGES = ''
 
-requires = ['pyramid >= 1.4']
+requires = [
+    'pyramid >= 1.4',
+    'user-agents',
+]
 
 docs_extras = [
     'Sphinx',

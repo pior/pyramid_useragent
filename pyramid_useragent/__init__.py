@@ -1,6 +1,8 @@
 import re
 import collections
 
+from user_agents.parsers import UserAgent as UserAgentClassifier
+
 """
 Parse the User-Agent header of a Pyramid request. The parsed User-Agent is
 available on request.user_agent_parsed.
@@ -14,12 +16,18 @@ def includeme(config):
     :py:class:`UserAgent` initialized with the client User-Agent.
     """
 
-    config.add_request_method(get_user_agent,
+    config.add_request_method(get_user_agent_parsed,
                               'user_agent_parsed',
                               reify=True) #pragma NOCOVER
+    config.add_request_method(get_user_agent_classified,
+                              'user_agent_classified',
+                              reify=True) #pragma NOCOVER
 
-def get_user_agent(request):
+def get_user_agent_parsed(request):
     return UserAgent(request.user_agent)
+
+def get_user_agent_classified(request):
+    return UserAgentClassifier(request.user_agent)
 
 
 class UserAgentComponent(object):

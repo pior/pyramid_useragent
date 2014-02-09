@@ -5,15 +5,28 @@ import mock
 
 class TestPyramidUserAgent(unittest.TestCase):
 
-    def test_get_user_agent(self):
-        from pyramid_useragent import (get_user_agent, UserAgent)
+    def test_get_user_agent_parsed(self):
+        from pyramid_useragent import (get_user_agent_parsed, UserAgent)
 
         request = mock.Mock()
         request.user_agent = "foobar"
-        resp = get_user_agent(request)
+        resp = get_user_agent_parsed(request)
 
         self.assertIsInstance(resp, UserAgent)
         self.assertEqual(resp.string, 'foobar')
+
+    def test_get_user_agent_classified(self):
+        from pyramid_useragent import (get_user_agent_classified, UserAgentClassifier)
+
+        request = mock.Mock()
+        request.user_agent = ("Mozilla/5.0 (Linux; U; Android 2.3.3; de-de; "
+                              "HTC Desire Build/GRI40) AppleWebKit/533.1 "
+                              "(KHTML, like Gecko) Version/4.0 Mobile "
+                              "Safari/533.1")
+        resp = get_user_agent_classified(request)
+
+        self.assertIsInstance(resp, UserAgentClassifier)
+        self.assertTrue(resp.is_mobile)
 
     def test_safety(self):
         from pyramid_useragent import UserAgent

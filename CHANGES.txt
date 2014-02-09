@@ -1,6 +1,11 @@
 Changes
 -------
 
+development
+```````````
+- Add a User-Agent classifier using the user-agents project
+
+
 0.2
 ```
 - Continuous testing
