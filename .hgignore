@@ -1,0 +1,8 @@
+syntax: glob
+
+.noseids
+nosetests.xml
+coverage.xml
+.coverage
+
+*.pyc
