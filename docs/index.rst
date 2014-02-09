@@ -67,6 +67,21 @@ Usage
             return ua.components.values()
 
 
+Tests and Docs
+--------------
+
+.. code-block:: python
+
+   pip install -e .[testing]
+   nosetests
+
+.. code-block:: python
+
+   pip install -e .[docs]
+   cd docs
+   make html
+
+
 Indices and tables
 ==================
 

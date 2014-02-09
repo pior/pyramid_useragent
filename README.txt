@@ -8,8 +8,7 @@ Project Info
 Provides an HTTP User-Agent parser for the
 `Pyramid <http://docs.pylonsproject.org>`_ web framework.
 
-.. * Documentation http://pyramid-useragent.readthedocs.org/
-
+* Documentation: http://pyramid-useragent.readthedocs.org/
 * PyPI: https://pypi.python.org/pypi/pyramid_useragent
 * Bitbucket: https://bitbucket.org/pior/pyramid_useragent
 * |droneio|
@@ -57,3 +56,19 @@ Usage
             return "Did you really use Links?"
         else:
             return ua.components.values()
+
+
+Tests and Docs
+--------------
+
+.. code-block:: python
+
+   pip install -e .[testing]
+   nosetests
+
+.. code-block:: python
+
+   pip install -e .[docs]
+   cd docs
+   make html
+
