@@ -1,15 +1,13 @@
 pyramid_useragent
 =================
 
-
 Project Info
 ------------
 
 Provides an HTTP User-Agent parser for the
 `Pyramid <http://docs.pylonsproject.org>`_ web framework.
 
-.. * Documentation http://pyramid-useragent.readthedocs.org/
-
+* Documentation: http://pyramid-useragent.readthedocs.org/
 * PyPI: https://pypi.python.org/pypi/pyramid_useragent
 * Bitbucket: https://bitbucket.org/pior/pyramid_useragent
 * |droneio|
@@ -17,6 +15,16 @@ Provides an HTTP User-Agent parser for the
 .. |droneio| image:: https://drone.io/bitbucket.org/pior/pyramid_useragent/status.png
    :target: https://drone.io/bitbucket.org/pior/pyramid_useragent
    :alt: Tests on drone.io
+
+
+Contents
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   api.rst
+
 
 Setup
 -----
@@ -57,3 +65,12 @@ Usage
             return "Did you really use Links?"
         else:
             return ua.components.values()
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

@@ -9,6 +9,11 @@ The parsing operation is safe: mal-formed User-Agent components are ignored.
 """
 
 def includeme(config):
+    """
+    Set up a request method ``user_agent_parsed`` returning an instance of
+    :py:class:`UserAgent` initialized with the client User-Agent.
+    """
+
     config.add_request_method(get_user_agent,
                               'user_agent_parsed',
                               reify=True) #pragma NOCOVER
@@ -18,11 +23,19 @@ def get_user_agent(request):
 
 
 class UserAgentComponent(object):
+    """
+    Simple object representing a single User-Agent component
+    """
 
     def __init__(self, name=None, version=None, comments=None):
         self.name = name
+        """Name part of a User-Agent component"""
+
         self.version = version
+        """Version part of a User-Agent component"""
+
         self.comments = comments
+        """Comment part of a User-Agent component as a list"""
 
     def __str__(self):
         if self.version is None:
@@ -36,24 +49,36 @@ class UserAgentComponent(object):
 
 class UserAgent(object):
     """
-    Extract only well-formed User-Agent components from a string.
-    Does not fail on mal-formed User-Agent strings.
+    Extract User-Agent components from a string.
+
+    .. NOTE:: The parsing operation is safe: mal-formed User-Agent components
+       are ignored.
     """
 
     UAREGEX = re.compile(r'([^/ ]+)(/(\S+))?( \(([^\)]*)\))?')
 
     def __init__(self, string=None):
         self.components = collections.OrderedDict()
+        """
+        List of :py:class:`UserAgentComponent` (order is kept by using an
+        OrderedDict)
+        """
+
         self.string = None
+        """Original User-Agent string"""
+
         if string:
             self.parse(string)
 
     @property
     def maincomponent(self):
+        """Most significant :py:class:`UserAgentComponent`"""
         if len(self.components) >= 1:
             return self.components.values()[0]
 
     def parse(self, string):
+        """Parse a User-Agent string"""
+
         self.string = string
         for parts in re.findall(self.UAREGEX, string):
 
