@@ -44,7 +44,7 @@ testing_extras = [
     ]
 
 setup(name='pyramid_useragent',
-      version='0.2',
+      version='0.3',
       description='HTTP User-Agent parser for Pyramid',
       long_description=README + '\n\n' +  CHANGES,
       classifiers=[

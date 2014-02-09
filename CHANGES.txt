@@ -1,8 +1,8 @@
 Changes
 -------
 
-development
-```````````
+0.3
+```
 - Add a User-Agent classifier using the user-agents project
 
 
