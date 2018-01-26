@@ -40,7 +40,6 @@ testing_extras = [
     'mock',
     'coverage',
     'nosexcover',
-    'yanc',
     ]
 
 setup(name='pyramid_useragent',
