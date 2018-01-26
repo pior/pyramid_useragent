@@ -8,15 +8,15 @@ Project Info
 Provides an HTTP User-Agent parser and classifier for the
 `Pyramid <http://docs.pylonsproject.org>`_ web framework.
 
-* Documentation: http://pyramid-useragent.readthedocs.org/
+* Documentation: https://pyramid-useragent.readthedocs.org/
 * PyPI: https://pypi.python.org/pypi/pyramid_useragent
-* Bitbucket: https://bitbucket.org/pior/pyramid_useragent
-* |droneio|
+* Code: https://github.com/pior/pyramid_useragent
+* |circleci|
 
-.. |droneio| image::
-   https://drone.io/bitbucket.org/pior/pyramid_useragent/status.png
-   :target: https://drone.io/bitbucket.org/pior/pyramid_useragent
-   :alt: Tests on drone.io
+.. |circleci| image::
+   https://circleci.com/gh/pior/pyramid_useragent.svg?style=svg
+   :target: https://circleci.com/gh/pior/pyramid_useragent
+   :alt: Tests on CircleCI
 
 
 Setup
@@ -88,4 +88,3 @@ Documentation
    pip install -e .[docs]
    cd docs
    make html
-

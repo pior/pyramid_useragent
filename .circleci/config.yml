@@ -1,0 +1,34 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:2.7.14
+
+    # working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "setup.py" }}
+          - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            virtualenv /tmp/venv
+            . /tmp/venv/bin/activate
+            pip install -e .
+            pip install ./[testing]
+
+      - save_cache:
+          paths:
+            - /tmp/venv
+          key: v1-dependencies-{{ checksum "setup.py" }}
+
+      - run:
+          name: run tests
+          command: |
+            . /tmp/venv/bin/activate
+            nosetests

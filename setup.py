@@ -1,17 +1,3 @@
-##############################################################################
-#
-# Copyright (c) 2014 Ludia Inc and Contributors.
-# All Rights Reserved.
-#
-# This software is subject to the provisions of the BSD-like license at
-# http://www.repoze.org/LICENSE.txt.  A copy of the license should accompany
-# this distribution.  THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL
-# EXPRESS OR IMPLIED WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO,
-# THE IMPLIED WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND
-# FITNESS FOR A PARTICULAR PURPOSE
-#
-##############################################################################
-
 import os
 
 from setuptools import setup
@@ -40,7 +26,6 @@ testing_extras = [
     'mock',
     'coverage',
     'nosexcover',
-    'yanc',
     ]
 
 setup(name='pyramid_useragent',
@@ -56,9 +41,9 @@ setup(name='pyramid_useragent',
         "Framework :: Pyramid",
         ],
       keywords='web wsgi pylons pyramid user-agent',
-      author="Pior Bastida, Ludia Inc",
+      author="Pior Bastida",
       author_email="pior@pbastida.net",
-      url="https://bitbucket.org/pior/pyramid_useragent",
+      url="https://github.com/pior/pyramid_useragent",
       license="BSD-derived (http://www.repoze.org/LICENSE.txt)",
       packages=find_packages(),
       include_package_data=True,

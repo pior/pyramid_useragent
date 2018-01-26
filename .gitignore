@@ -1,0 +1,12 @@
+*.egg-info
+dist/
+build/
+*.pyc
+*.pyo
+.coverage*
+coverage.xml
+nosetests.xml
+.noseids
+.cache
+
+tmp/
