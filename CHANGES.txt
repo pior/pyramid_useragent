@@ -1,6 +1,11 @@
 Changes
 -------
 
+0.3.1
+`````
+- Fix crash with the parser when user_agent is None
+
+
 0.3
 ```
 - Add a User-Agent classifier using the user-agents project

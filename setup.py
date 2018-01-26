@@ -30,7 +30,7 @@ dev_extras = [
     ]
 
 setup(name='pyramid_useragent',
-      version='0.3',
+      version='0.3.1',
       description='HTTP User-Agent parser for Pyramid',
       long_description=README + '\n\n' +  CHANGES,
       classifiers=[
