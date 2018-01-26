@@ -76,7 +76,7 @@ Tests
 
 .. code-block:: python
 
-   pip install -e .[testing]
+   pip install -e .[dev]
    nosetests
 
 
@@ -88,3 +88,28 @@ Documentation
    pip install -e .[docs]
    cd docs
    make html
+
+
+Release
+=======
+
+First setup testpypi: https://packaging.python.org/guides/using-testpypi/
+
+.. code-block:: shell
+
+   $ rm -rf dist
+
+   $ python setup.py sdist bdist_wheel
+   ...
+
+   $ twine upload --repository testpypi dist/*
+   ...
+
+Go to https://test.pypi.org/project/pyramid-useragent/ to validate the result.
+
+Then upload to PyPI
+
+.. code-block:: shell
+
+   $ twine upload dist/*
+   ...

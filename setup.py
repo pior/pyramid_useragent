@@ -21,11 +21,12 @@ docs_extras = [
     'docutils',
     ]
 
-testing_extras = [
+dev_extras = [
     'nose',
     'mock',
     'coverage',
     'nosexcover',
+    'twine',
     ]
 
 setup(name='pyramid_useragent',
@@ -51,7 +52,7 @@ setup(name='pyramid_useragent',
       tests_require = ['mock'],
       install_requires = requires,
       extras_require = {
-          'testing':testing_extras,
+          'dev':dev_extras,
           'docs':docs_extras,
           },
       test_suite="pyramid_useragent",
