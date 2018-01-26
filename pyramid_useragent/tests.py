@@ -28,6 +28,15 @@ class TestPyramidUserAgent(unittest.TestCase):
         self.assertIsInstance(resp, UserAgentClassifier)
         self.assertTrue(resp.is_mobile)
 
+    def test_no_user_agent(self):
+        from pyramid_useragent import (get_user_agent_classified, UserAgentClassifier)
+
+        request = mock.Mock()
+        request.user_agent = None
+
+        resp = get_user_agent_classified(request)
+        self.assertIsInstance(resp, UserAgentClassifier)
+
     def test_safety(self):
         from pyramid_useragent import UserAgent
 

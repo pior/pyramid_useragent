@@ -27,7 +27,7 @@ def get_user_agent_parsed(request):
     return UserAgent(request.user_agent)
 
 def get_user_agent_classified(request):
-    return UserAgentClassifier(request.user_agent)
+    return UserAgentClassifier(request.user_agent or '')
 
 
 class UserAgentComponent(object):
