@@ -1,6 +1,7 @@
 import unittest
 
 import mock
+import six
 
 
 class TestPyramidUserAgent(unittest.TestCase):
@@ -48,7 +49,7 @@ class TestPyramidUserAgent(unittest.TestCase):
 
         ua = UserAgent(None)
 
-        self.assertItemsEqual(ua.components, [])
+        six.assertCountEqual(self, ua.components, [])
         self.assertEqual(ua.maincomponent, None)
 
         self.assertEqual(str(ua), 'EmptyUserAgent')
@@ -59,7 +60,7 @@ class TestPyramidUserAgent(unittest.TestCase):
 
         ua = UserAgent('')
 
-        self.assertItemsEqual(ua.components, [])
+        six.assertCountEqual(self, ua.components, [])
         self.assertEqual(ua.maincomponent, None)
 
         self.assertEqual(str(ua), 'EmptyUserAgent')
@@ -69,7 +70,7 @@ class TestPyramidUserAgent(unittest.TestCase):
         from pyramid_useragent import UserAgent as UA
 
         ua = UA('First Second/1.2 Third')
-        self.assertEqual(ua.components.keys(),
+        self.assertEqual(list(ua.components.keys()),
                          ['First', 'Second', 'Third'])
         self.assertEqual(ua.components['First'].version, None)
         self.assertEqual(ua.components['Second'].version, '1.2')
@@ -100,7 +101,7 @@ class TestPyramidUserAgent(unittest.TestCase):
 
         ua = UA('First/1 Second/1 Third/1')
 
-        self.assertEqual(ua.components.keys(),
+        self.assertEqual(list(ua.components.keys()),
                          ['First', 'Second', 'Third'])
 
     def test_components_comment(self):

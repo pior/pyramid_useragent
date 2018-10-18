@@ -1,15 +1,13 @@
-version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/python:2.7.14
+version: 2.1
 
+commands:
+  tox:
     steps:
       - checkout
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "setup.py" }}
+          - v1-dependencies-{{ checksum "setup.py" }}-{{ checksum "tox.ini" }}
           - v1-dependencies-
 
       - run:
@@ -17,16 +15,45 @@ jobs:
           command: |
             virtualenv /tmp/venv
             . /tmp/venv/bin/activate
-            pip install -e .
-            pip install ./[dev]
+            pip install tox
 
       - save_cache:
           paths:
             - /tmp/venv
-          key: v1-dependencies-{{ checksum "setup.py" }}
+          key: v1-dependencies-{{ checksum "setup.py" }}-{{ checksum "tox.ini" }}
 
       - run:
           name: run tests
           command: |
             . /tmp/venv/bin/activate
-            nosetests
+            tox
+jobs:
+  py27:
+    environment:
+      TOXENV: py27
+    docker:
+      - image: circleci/python:2.7.15
+    steps:
+      - tox
+  py36:
+    environment:
+      TOXENV: py36
+    docker:
+      - image: circleci/python:3.6.6
+    steps:
+      - tox
+  py37:
+    environment:
+      TOXENV: py37
+    docker:
+      - image: circleci/python:3.7.0
+    steps:
+      - tox
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - py27
+      - py36
+      - py37
