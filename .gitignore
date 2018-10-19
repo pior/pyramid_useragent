@@ -8,5 +8,6 @@ coverage.xml
 nosetests.xml
 .noseids
 .cache
+.tox/
 
 tmp/
