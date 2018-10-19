@@ -1,23 +1,28 @@
 pyramid_useragent
 =================
 
-
-Project Info
-------------
-
 Provides an HTTP User-Agent parser and classifier for the
 `Pyramid <http://docs.pylonsproject.org>`_ web framework.
 
-* Documentation: https://pyramid-useragent.readthedocs.org/
-* PyPI: https://pypi.python.org/pypi/pyramid_useragent
-* Code: https://github.com/pior/pyramid_useragent
-* |circleci|
+|circleci| |pythonversion| |documentation|
+
+Code: https://github.com/pior/pyramid_useragent
+
 
 .. |circleci| image::
    https://circleci.com/gh/pior/pyramid_useragent.svg?style=svg
    :target: https://circleci.com/gh/pior/pyramid_useragent
    :alt: Tests on CircleCI
 
+.. |pythonversion| image::
+   https://img.shields.io/pypi/pyversions/pyramid_useragent.svg
+   :target: https://pypi.python.org/pypi/pyramid_useragent
+   :alt: Python version on PyPI
+
+.. |documentation| image::
+   https://readthedocs.org/projects/pyramid-useragent/badge/?version=latest&style=flat-square
+   :target: https://pyramid-useragent.readthedocs.org/
+   :alt: Documentation on ReadTheDocs
 
 Setup
 -----
