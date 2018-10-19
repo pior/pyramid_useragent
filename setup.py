@@ -30,7 +30,7 @@ dev_extras = [
     'six',
     ]
 
-VERSION = '0.3.1'
+VERSION = '0.4.0'  # maintained by release tool
 
 setup(name='pyramid_useragent',
       version=VERSION,
