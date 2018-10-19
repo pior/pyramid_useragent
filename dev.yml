@@ -1,5 +1,5 @@
 up:
-  - python: 2.7.13
+  - python: 3.6.6
   - pip:
     - requirements-dev.txt
   - python_develop
@@ -7,3 +7,8 @@ up:
 commands:
   test:
     run: nosetests
+
+  release:
+    run: pyreleaser create --only-on master --push
+  publish:
+    run: pyreleaser upload
