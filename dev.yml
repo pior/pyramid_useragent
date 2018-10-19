@@ -1,0 +1,9 @@
+up:
+  - python: 2.7.13
+  - pip:
+    - requirements-dev.txt
+  - python_develop
+
+commands:
+  test:
+    run: nosetests
