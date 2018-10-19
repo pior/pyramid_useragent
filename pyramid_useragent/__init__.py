@@ -82,7 +82,7 @@ class UserAgent(object):
     def maincomponent(self):
         """Most significant :py:class:`UserAgentComponent`"""
         if len(self.components) >= 1:
-            return self.components.values()[0]
+            return next(iter(self.components.values()))
 
     def parse(self, string):
         """Parse a User-Agent string"""
