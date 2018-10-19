@@ -11,12 +11,17 @@ Provides an HTTP User-Agent parser and classifier for the
 * Documentation: https://pyramid-useragent.readthedocs.org/
 * PyPI: https://pypi.python.org/pypi/pyramid_useragent
 * Code: https://github.com/pior/pyramid_useragent
-* |circleci|
+* |circleci| |pythonversion|
 
 .. |circleci| image::
    https://circleci.com/gh/pior/pyramid_useragent.svg?style=svg
    :target: https://circleci.com/gh/pior/pyramid_useragent
    :alt: Tests on CircleCI
+
+.. |pythonversion| image::
+   https://img.shields.io/pypi/pyversions/pyramid_useragent.svg
+   :target: https://pypi.python.org/pypi/pyramid_useragent
+   :alt: Python version on PyPI
 
 
 Setup
