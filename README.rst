@@ -74,10 +74,19 @@ Usage
 Tests
 -----
 
+For development, this project uses a tool called `DevBuddy <https://github.com/devbuddy/devbuddy>`_.
+
+To install DevBuddy, go to the `install page on Github <https://github.com/devbuddy/devbuddy#install>`_
+Once installed, you should be able to run ``bud up`` to setup your development
+environment.
+
+If you don't want to use DevBuddy, take a look at the file `dev.yml` to know
+how the project is setup, linted, tested, released.
+
+
 .. code-block:: python
 
-   pip install -e .[dev]
-   nosetests
+   $ bud test
 
 
 Documentation
@@ -93,23 +102,20 @@ Documentation
 Release
 =======
 
-First setup testpypi: https://packaging.python.org/guides/using-testpypi/
+Make sure you run the tests just before:
 
 .. code-block:: shell
 
-   $ rm -rf dist
+   $ bud test
 
-   $ python setup.py sdist bdist_wheel
-   ...
-
-   $ twine upload --repository testpypi dist/*
-   ...
-
-Go to https://test.pypi.org/project/pyramid-useragent/ to validate the result.
-
-Then upload to PyPI
+Create a new release:
 
 .. code-block:: shell
 
-   $ twine upload dist/*
-   ...
+   $ bud release 0.4.0
+
+Publish the release:
+
+.. code-block:: shell
+
+   $ bud publish
